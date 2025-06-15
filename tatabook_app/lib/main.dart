@@ -34,8 +34,12 @@ class _ImagePageState extends State<ImagePage> {
   int leftimagenum = 1;
   int rightimagenum = 2;
   void random() {
-    leftimagenum = Random().nextInt(8) + 1;
-    rightimagenum = Random().nextInt(8) + 1;
+    // There are nine available images (1-9). The previous
+    // implementation only selected values in the range 1-8,
+    // leaving out image-9. Adjust the random range so every
+    // image can be displayed.
+    leftimagenum = Random().nextInt(9) + 1;
+    rightimagenum = Random().nextInt(9) + 1;
   }
 
   @override
